@@ -49,12 +49,10 @@ install:
 	cp __root__stratux-pre-start.sh /root/stratux-pre-start.sh
 	chmod 644 /lib/systemd/system/stratux.service
 	chmod 744 /root/stratux-pre-start.sh
-	ln -fs /lib/systemd/system/stratux.service /etc/systemd/system/multi-user.target.wants/stratux.service
+	systemctl enable stratux.service
 	make www
 	cp -f libdump978.so /usr/lib/libdump978.so
 	cp -f dump1090/dump1090 /usr/bin/
-	cp -f image/hostapd_manager.sh /usr/sbin/
-	cp -f image/stratux-wifi.sh /usr/sbin/
 
 clean:
 	rm -f gen_gdl90 libdump978.so fancontrol ahrs_approx
