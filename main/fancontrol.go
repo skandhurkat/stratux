@@ -16,7 +16,7 @@ import (
 )
 
 // #include <wiringPi.h>
-// #cgo LDFLAGS: -lwiringPi
+// #cgo LDFLAGS: -lwiringPi -lcrypt -lm -lrt
 import "C"
 
 // Initialize Prometheus metrics.
